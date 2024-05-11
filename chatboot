@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyMawwlexdWDgMqc7FoHnkNN",
+      "authorship_tag": "ABX9TyNOtndG+MagfcPeQq40Nmwk",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -41,14 +41,16 @@
       "cell_type": "code",
       "source": [
         "import google.generativeai as genai\n",
-        "GOOGLE_API_KEY='AIzaSyC2j81knIjLB4lUy0uPaaeRhUprR1MNpUo'\n",
+        "from google.colab import userdata\n",
+        "api_key = userdata.get(\"SECRET_KEY\")\n",
         "\n",
-        "genai.configure(api_key=GOOGLE_API_KEY)"
+        "\n",
+        "genai.configure(api_key=api_key)"
       ],
       "metadata": {
         "id": "UcCGuGePbOrc"
       },
-      "execution_count": 36,
+      "execution_count": 60,
       "outputs": []
     },
     {
@@ -152,7 +154,7 @@
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 839
+          "height": 859
         },
         "id": "2dpRI5Ebio_4",
         "outputId": "c4a90c0f-a809-43bb-df21-0c22ae7d6cea"
@@ -237,19 +239,21 @@
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 71
+          "height": 106
         },
         "id": "mfOQs1S5kLWn",
-        "outputId": "c955d919-2101-4657-bb59-7c3f253ce79b"
+        "outputId": "07a0d923-4ab6-439d-ace1-9d15d8b75686"
       },
-      "execution_count": 58,
+      "execution_count": 61,
       "outputs": [
         {
           "name": "stdout",
           "output_type": "stream",
           "text": [
-            "O que você quer falar: oi carol você pode falar comigo agora?\n",
-            "Não sou a Carol. Sou Gemini, um modelo de linguagem de IA multimodal desenvolvido pelo Google.\n",
+            "O que você quer falar: QUAL É O SABOR DE SORVETE MAIS CONSUMIDO NO BRASIL\n",
+            "Chocolate\n",
+            "O que você quer falar: FIM\n",
+            "Obrigado por conversar comigo. Tenha um ótimo dia!\n",
             "O que você quer falar: fim\n"
           ]
         }
@@ -274,12 +278,12 @@
       "metadata": {
         "colab": {
           "base_uri": "https://localhost:8080/",
-          "height": 523
+          "height": 793
         },
         "id": "aA7HYRGbpoQO",
-        "outputId": "6c01e935-c308-4bd9-b507-68791a1fe4a9"
+        "outputId": "59da8c06-f094-48b2-f524-be2da4611564"
       },
-      "execution_count": 59,
+      "execution_count": 62,
       "outputs": [
         {
           "output_type": "display_data",
@@ -407,6 +411,74 @@
               "<IPython.core.display.Markdown object>"
             ],
             "text/markdown": "> **model**: Não sou a Carol. Sou Gemini, um modelo de linguagem de IA multimodal desenvolvido pelo Google."
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "------------------------------\n"
+          ]
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.core.display.Markdown object>"
+            ],
+            "text/markdown": "> **user**: QUAL É O SABOR DE SORVETE MAIS CONSUMIDO NO BRASIL"
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "------------------------------\n"
+          ]
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.core.display.Markdown object>"
+            ],
+            "text/markdown": "> **model**: Chocolate"
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "------------------------------\n"
+          ]
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.core.display.Markdown object>"
+            ],
+            "text/markdown": "> **user**: FIM"
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "------------------------------\n"
+          ]
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.core.display.Markdown object>"
+            ],
+            "text/markdown": "> **model**: Obrigado por conversar comigo. Tenha um ótimo dia!"
           },
           "metadata": {}
         },
